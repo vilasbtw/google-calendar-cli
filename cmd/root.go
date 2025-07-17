@@ -7,6 +7,7 @@ import (
 	"os"
 
 	"github.com/spf13/cobra"
+	agenda "github.com/vilasbtw/google-calendar-cli/cmd/agenda"
 	events "github.com/vilasbtw/google-calendar-cli/cmd/events"
 )
 
@@ -16,6 +17,8 @@ func NewRootCmd() *cobra.Command {
 		Short: "Your calendar CLI",
 	}
 	rootCmd.AddCommand(events.EventsCmd)
+	rootCmd.AddCommand(agenda.AgendaCmd)
+
 	return rootCmd
 }
 
