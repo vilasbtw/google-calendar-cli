@@ -7,17 +7,15 @@ import (
 	"os"
 
 	"github.com/spf13/cobra"
+	events "github.com/vilasbtw/google-calendar-cli/cmd/events"
 )
 
 func NewRootCmd() *cobra.Command {
 	rootCmd := &cobra.Command{
-		Use:   "[name]",
-		Short: "returns 'Hello + name'",
-		Args:  cobra.ExactArgs(1),
-		Run: func(cmd *cobra.Command, args []string) {
-			fmt.Printf("Hello, %s\n", args[0])
-		},
+		Use:   "calendar",
+		Short: "Your calendar CLI",
 	}
+	rootCmd.AddCommand(events.EventsCmd)
 	return rootCmd
 }
 
